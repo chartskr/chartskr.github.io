@@ -1,0 +1,90 @@
+<html lang="en-kr"><head>
+  <title>멜론 캐쉬충전 바로가기 | 음원정보팀</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="og:image" content="http://52hz.kr/images/thumb_meloncash.jpg">
+    <meta property="og:url" content="http://52hz.kr/meloncash_open.php">
+    <meta property="og:title" content="멜론 캐쉬충전 바로가기 | 방탄소년단 음원정보팀">
+    <meta property="og:description" content="멜론 캐쉬충전 바로가기">
+    <meta name="twitter:card" content="photo">
+
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mystyle.css">
+
+
+
+    <script> // http 접속 시 자동으로 https 로 전환시키는 스크립트
+        console.log("The URL of this page is: " + window.location.href);
+
+        let myUrl = window.location.href;
+        let dividedUrl = myUrl.split("52hz.kr/").reverse()[0];
+        console.log(dividedUrl)
+
+        console.log("http://52hz.kr/" + dividedUrl)
+
+        if ( myUrl === "http://52hz.kr/" + dividedUrl) {
+        window.location.href='https://52hz.kr/' + dividedUrl;
+        }
+    </script>
+
+
+  </head>
+<body>
+
+<div style="display: flex; justify-content: center; align-items: center; height: 90vh; width: 100vw;">
+<button id="android" onclick="gotolink()" class="btn btn-secondary">안 들어가진다면 이 버튼을 눌러주세요</button>
+</div>
+
+
+
+
+<script>
+
+var userAgent = navigator.userAgent.toLowerCase();
+
+console.log(userAgent);
+
+$(document).ready(function() {
+
+    var linkto = "melonapp://webview?type=CA&close=N&title=캐시 충전&cashType=&url=https://m2.melon.com/buy/meloncash/charge.htm";
+
+    function gotolink(linkto) {
+        location.href = linkto;
+    }
+
+
+    if(userAgent.match('android')) {
+        console.log('android');
+        linkto = "melonapp://webview?type=CA&close=N&title=캐시 충전&cashType=&url=https://m2.melon.com/buy/meloncash/charge.htm";
+        gotolink(linkto);
+
+    }else if(userAgent.match('iphone')){
+        console.log('iphone');
+        linkto = "melonapp://webview?type=CA&close=N&title=캐시 충전&cashType=&url=https://m2.melon.com/buy/meloncash/charge.htm";
+        gotolink(linkto);
+
+    }else if(userAgent.match('ipad')){
+        console.log('ipad');
+        linkto = "melonapp://webview?type=CA&close=N&title=캐시 충전&cashType=&url=https://m2.melon.com/buy/meloncash/charge.htm";
+        gotolink(linkto);
+
+    }else {
+        console.log('etc');
+        // alert('PC인 경우 접속되지 않습니다. 모바일을 이용해주세요!');
+        linkto = "https://m2.melon.com/buy/meloncash/charge.htm";
+        gotolink(linkto);
+    }
+
+});
+
+</script></body></html>
